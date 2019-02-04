@@ -8,10 +8,12 @@ mount -n -o remount,rw /
 
 #Remove link for bugged wget
 mv /bin/wget /bin/wget_
-mv /tmp/wget* /bin/
+curl -k -Lhttps://github.com/superpippo82xxx/VMG88xx-entware/raw/master/wget-ssl -o /tmp/wget-ssl
+mv /tmp/wget-ssl /bin/
+chmod +x /bin/wget-ssl
+ln -s /bin/wget /bin/wget-ssl
 cp /etc/profile /etc/profile_ori
-mv /tmp/profile /etc/profile
-echo 'export PATH=/opt/bin:/opt/sbin:"PATH "' >> /etc/profile
+echo 'export PATH=/opt/bin:/opt/sbin:$PATH' >> /etc/profile
 mv /tmp/entware.sh /etc/init.d
 echo '#Entware Startup script by Superpippo82xxx' >> /etc/init.d/rcS
 echo '/data/entware.sh &' >> /etc/init.d/rcS
