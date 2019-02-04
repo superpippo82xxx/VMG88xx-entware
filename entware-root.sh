@@ -8,7 +8,7 @@ mount -n -o remount,rw /
 
 #Remove link for bugged wget
 mv /bin/wget /bin/wget_
-curl -k -Lhttps://github.com/superpippo82xxx/VMG88xx-entware/raw/master/wget-ssl -o /tmp/wget-ssl
+curl -k -L https://github.com/superpippo82xxx/VMG88xx-entware/raw/master/wget-ssl -o /tmp/wget-ssl
 mv /tmp/wget-ssl /bin/
 chmod +x /bin/wget-ssl
 ln -s /bin/wget /bin/wget-ssl
