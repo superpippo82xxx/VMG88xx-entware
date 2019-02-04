@@ -5,6 +5,7 @@ echo "Script by Superpippo82xxx"
 
 #Mount fs RW
 mount -n -o remount,rw /
+
 #Remove link for bugged wget
 mv /bin/wget /bin/wget_
 mv /tmp/wget* /bin/
