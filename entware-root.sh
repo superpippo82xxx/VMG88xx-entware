@@ -28,6 +28,7 @@ echo 'sleep 3m' >> /data/firewall.sh
 echo '#apro ssh entware' >> /data/firewall.sh
 echo 'iptables -A INPUT_GENERAL -i  br+ -p tcp -m tcp --dport 22 -j ACCEPT' >> /data/firewall.sh
 chmod +x /data/entware.sh
+chmod +x /data/firewall.sh
 cd /tmp/
 mkdir /home/root/usb1_sda1/opt
 mount /home/root/usb1_sda1/opt /opt
@@ -36,5 +37,6 @@ sh /tmp/alternative.sh
 opkg update
 opkg install dropbear
 /opt/etc/init.d/rc.unslung start
+sh /data/firewall.sh
 echo 'Se tutto è andato bene puoi collegarti al router in ssh con password di root 12345'
 echo 'Mi raccomando cambiala subito!!'
